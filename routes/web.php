@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// URL → http://formulario.test/
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+//
+Route::view('/post', 'post');
