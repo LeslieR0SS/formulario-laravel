@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 /*
@@ -15,9 +16,12 @@ use \App\Http\Controllers\PostController;
 
 // URL → http://formulario.test/
 
-Route::get('/', function () {
+Route::get('/{lang}', function ($lang) {
+    App::setLocale($lang);
     return view('welcome');
 });
 
 //
 Route::resource('post', PostController::class);
+
+

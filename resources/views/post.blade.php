@@ -9,35 +9,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-<h1>Formulario Base</h1>
+<h1>@lang('form-lang.form-name')</h1>
 <form action="{{ route('post.store') }}" method="post">
     @csrf
-    <label for="title">Título:</label><br>
-    <input type="text" id="title" name="title" placeholder="Ingresa aquí el título de la publicación" size="30" :value="old('title')">
+    <!-- 1r de añadir soporte de lenguaje multilingue. -->
+    <label for="title">@lang('form-lang.title')</label><br>
+    <input type="text" id="title" name="title" placeholder="Ingresa aquí el título de la publicación" size="33" :value="old('title')">
     <br>
 
     <br>
-    <label for="extracto">Extracto publicación:</label><br>
-    <input type="text" id="extracto" name="extracto" placeholder="Ingresa un extracto de la publicación" size="30">
+    <!-- 2n de añadir soporte de lenguaje multilingue. -->
+    <label for="extracto">{{__('form-lang.extract')}}</label><br>
+    <input type="text" id="extracto" name="extracto" placeholder="Ingresa un extracto de la publicación" size="33">
     <br>
 
     <br>
-    <label for="content">Contenido publicación:</label><br>
+    <label for="content">{{__('form-lang.content')}}</label><br>
     <textarea id="content" name="content" placeholder="Ingresa el contenido completo de la publicación" rows="10" cols="90"></textarea>
     <br>
 
     <br>
     <input type="checkbox" id="caducable" name="caducable" value="caducable">
-    <label for="caducable"> Caducable </label>
+    <label for="caducable"> @lang('form-lang.expired') </label>
     <input type="checkbox" id="comentable" name="comentable" value="comentable">
-    <label for="comentable"> Comentable </label>
+    <label for="comentable"> {{__('form-lang.commentable')}} </label>
     <br>
 
     <br>
-    <label for="acceso">Acceso</label>
+    <label for="acceso">@lang('form-lang.access')</label>
     <select id="acceso" name="acceso">
-        <option value="privado">Privado</option>
-        <option value="publico">Público</option>
+        <option value="privado">@lang('form-lang.private')</option>
+        <option value="publico">{{__('form-lang.public')}}</option>
     </select>
     <br>
 
