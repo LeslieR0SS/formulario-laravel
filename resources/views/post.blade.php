@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no">
+          content="width=device-width, user-scalable=no, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario Base</title>
 </head>
@@ -28,7 +28,7 @@
     <input type="checkbox" id="caducable" name="caducable" value="caducable">
     <label for="caducable"> Caducable </label>
     <input type="checkbox" id="comentable" name="comentable" value="comentable">
-    <label for="comentable"> Caducable </label>
+    <label for="comentable"> Comentable </label>
     <br>
 
     <br>
