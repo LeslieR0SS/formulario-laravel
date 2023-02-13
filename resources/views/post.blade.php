@@ -10,9 +10,10 @@
 </head>
 <body>
 <h1>Formulario Base</h1>
-<form action="/my-handling-form-page" method="post">
+<form action="{{ route('post.store') }}" method="post">
+    @csrf
     <label for="title">Título:</label><br>
-    <input type="text" id="title" name="title_post" placeholder="Ingresa aquí el título de la publicación" size="30">
+    <input type="text" id="title" name="title" placeholder="Ingresa aquí el título de la publicación" size="30" :value="old('title')">
     <br>
 
     <br>
@@ -22,7 +23,7 @@
 
     <br>
     <label for="content">Contenido publicación:</label><br>
-    <textarea id="content" name="post_content" placeholder="Ingresa el contenido completo de la publicación" rows="10" cols="90"></textarea>
+    <textarea id="content" name="content" placeholder="Ingresa el contenido completo de la publicación" rows="10" cols="90"></textarea>
     <br>
 
     <br>
