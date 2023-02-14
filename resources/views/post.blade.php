@@ -10,12 +10,17 @@
 </head>
 <body>
 <h1>@lang('form-lang.form-name')</h1>
+
+<!-- @ dump($errors->all()) Para ver todos los errores que se produzcan en el formlario-->
 <form action="{{ route('post.store') }}" method="post">
     @csrf
     <!-- 1r de añadir soporte de lenguaje multilingue. -->
     <label for="title">@lang('form-lang.title')</label><br>
     <input type="text" id="title" name="title" placeholder="Ingresa aquí el título de la publicación" size="33" :value="old('title')">
     <br>
+    @error('title')
+        <small style="color: red">{{ $message }}</small>
+    @enderror
 
     <br>
     <!-- 2n de añadir soporte de lenguaje multilingue. -->
@@ -27,6 +32,9 @@
     <label for="content">{{__('form-lang.content')}}</label><br>
     <textarea id="content" name="content" placeholder="Ingresa el contenido completo de la publicación" rows="10" cols="90"></textarea>
     <br>
+    @error('content')
+        <small style="color: red"> {{ $message }}</small>
+    @enderror
 
     <br>
     <input type="checkbox" id="caducable" name="caducable" value="caducable">

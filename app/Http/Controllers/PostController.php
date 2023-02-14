@@ -37,6 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ], [
+            'title.required' => 'El campo del título es obligatorio',
+            'content.required' => 'El contenido de la publicación es obligatoria'
+        ]);
         $post = $post ?? new Post();
 
         $post->title = $request->title;
